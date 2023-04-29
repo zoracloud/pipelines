@@ -1,5 +1,13 @@
 package widgets
 
-type Widgets struct {
-	Name string
+type Widget interface {
+	Do()
+}
+
+type  Widgets struct {
+	// OrderedList []
+}
+
+func (w Widgets) Do() {
+
 }

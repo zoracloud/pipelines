@@ -1,9 +1,8 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/zoracloud/pipelines/backend/src/apiserver/dag"
+	"github.com/zoracloud/pipelines/backend/src/apiserver/execute"
 	"github.com/zoracloud/pipelines/backend/src/apiserver/widgets"
 	"github.com/zoracloud/pipelines/backend/src/apiserver/workflow"
 )
@@ -11,11 +10,10 @@ import (
 func main() {
 	runner := dag.DynamicRunner{}
 
-	widgetA := widgets.Widgets{Name: "SSh"}
-	widgetB := widgets.Widgets{Name: "Email"}
+	widgetA := widgets.SshWidget{Name: "SSH Widget A"}
+	widgetB := widgets.SendEmailWidget{Name: "Email Widget B"}
 
-	workflow := workflow.LogicalWorkflow{Widgets: []widgets.Widgets{widgetA, widgetB}}
+	workflow := workflow.LogicalWorkflow{Widgets: []execute.Executor{&widgetA, &widgetB}}
 	
 	runner.Run(workflow)
-	fmt.Println(runner, workflow)
 }
