@@ -2,23 +2,12 @@ package widgets
 
 import (
 	"fmt"
-
-	// "github.com/zoracloud/pipelines/backend/src/apiserver/execute"
 )
-
-type SshExecutor struct {
-
-}
-
-type SshSpecification struct {
-	
-
-}
-
 
 type SshWidget struct {
 	Name string
-	// SshExecutor
+	Widget
+	// Specification spec.WidgetSpecification
 	// SshSpecification
 }
 
@@ -28,12 +17,12 @@ type SendEmailWidget struct {
 	// SshSpecification
 }
 
-func (s *SshWidget) Executor() {
+func (s SshWidget) Executor() {
 	fmt.Println("Making SSh Now ----")
 	// return 10
 }
 
-func (s *SendEmailWidget) Executor() {
+func (s SendEmailWidget) Executor() {
 	fmt.Println("Sending Email Now ----")
 	// return 10
 }

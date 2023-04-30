@@ -1,13 +1,15 @@
 package widgets
 
-type Widget interface {
-	Do()
+type WidgetExecutor interface {
+	Execute()
 }
 
-type  Widgets struct {
-	// OrderedList []
+type  Widget struct {
+	WidgetSpecification
+	ExecutorSpecification
+	WidgetDriver
 }
 
-func (w Widgets) Do() {
+func (w Widget) Execute() {
 
 }

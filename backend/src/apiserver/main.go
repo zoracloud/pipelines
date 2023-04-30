@@ -13,7 +13,7 @@ func main() {
 	widgetA := widgets.SshWidget{Name: "SSH Widget A"}
 	widgetB := widgets.SendEmailWidget{Name: "Email Widget B"}
 
-	workflow := workflow.LogicalWorkflow{Widgets: []execute.Executor{&widgetA, &widgetB}}
+	workflow := workflow.LogicalWorkflow{Widgets: []execute.Executor{widgetA, widgetB}}
 	
 	runner.Run(workflow)
 }
