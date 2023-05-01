@@ -1,8 +1,10 @@
 package workflow
 
-import "github.com/zoracloud/pipelines/backend/src/apiserver/widgets"
+import (
+	"github.com/zoracloud/pipelines/backend/src/apiserver/execute"
+)
 
 
 type LogicalWorkflow struct {
-	Widgets []widgets.Widgets
+	Widgets []execute.Executor
 }
