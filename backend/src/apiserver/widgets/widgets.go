@@ -1,13 +1,24 @@
 package widgets
 
-type WidgetExecutor interface {
-	Execute()
-}
+import "fmt"
+
+// type WidgetExecutor interface {
+// 	Initialize(spec WidgetSpecification)
+// 	Execute()
+// 	RunExecutor() WidgetSpecification
+// }
+
 
 type  Widget struct {
-	WidgetSpecification
-	ExecutorSpecification
-	WidgetDriver
+	WidgetSpec WidgetSpecification
+	// ExecutorSpecification
+	// WidgetDriver
+}
+
+
+
+func (w Widget) Initialize(spec WidgetSpecification) {
+	fmt.Println(spec)
 }
 
 func (w Widget) Execute() {

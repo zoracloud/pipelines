@@ -10,10 +10,12 @@ import (
 func main() {
 	runner := dag.DynamicRunner{}
 
-	widgetA := widgets.SshWidget{Name: "SSH Widget A"}
-	widgetB := widgets.SendEmailWidget{Name: "Email Widget B"}
+	widgetA := widgets.SshWidget{
+		Name: "SSH Widget A",
+	}
+	// widgetB := widgets.SendEmailWidget{Name: "Email Widget B"}
 
-	workflow := workflow.LogicalWorkflow{Widgets: []execute.Executor{widgetA, widgetB}}
+	workflow := workflow.LogicalWorkflow{Widgets: []execute.Executor{widgetA}}
 	
 	runner.Run(workflow)
 }

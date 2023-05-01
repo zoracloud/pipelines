@@ -21,7 +21,11 @@ func (DynamicRunner) Run(workflow workflow.LogicalWorkflow) {
 		fmt.Println("Processing Widget", widget, index)
 		// fmt.Printf("Type %T \n",  widget)
 		// fmt.Printf("Widget %v", widget)
-		widget.Executor()
+		// widget.
+		widget.Initialize()
+		// widget.Executor()
+		// a := widget.ExecutionParams()
+		// fmt.Println("Execution Params", a)
 		// fmt.Println(widget.Executor())
 	}
 }
